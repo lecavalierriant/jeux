@@ -1,7 +1,3 @@
-a {
-	cursor: pointer;
-	transition: 0.2s;
-}
 a:hover {margin-left: 5%;}
 .a-fleurs,
 .a-saisons,
@@ -20,8 +16,6 @@ a:hover {margin-left: 5%;}
 }
 
 body {
-	text-align: center;
-	color: #ffffff;
 	text-shadow: 2px 2px 1px #000000;
 	font-size: 150%;
 	font-family: bahnschrift;
@@ -39,7 +33,6 @@ button {
 	margin-bottom: 5%;
 	box-shadow: 2px 2px 1px #000000;
 	background-color: #0027b4;
-	color: #ffffff;
 	text-shadow: 2px 2px 1px #000000;
 }
 button:hover {
@@ -62,7 +55,6 @@ button:active {background-color: #667dd2;}
 	right: 50%;
 }
 
-table {margin: auto;}
 #table-plateau {width: 100%;}
 #table-exposition {font-size: 200%;}
 #table-annonces {width: 80%;}
