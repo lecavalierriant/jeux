@@ -1,14 +1,7 @@
-body {
-	font-size: 300%;
-	background-color: #008000;
-	text-align: center;
-}
-
-table {margin: auto;}
+body {font-size: 300%;}
 
 td {
 	cursor: pointer;
-	text-shadow: 1px 1px 0px #ffffff;
 	width: 75px;
 	height: 75px;
 }
