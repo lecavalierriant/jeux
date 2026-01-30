@@ -1,25 +1,8 @@
 * {
-	color: #ffffff;
-	font-family: garamond;
 	font-size: 25px;
 }
 
-a {
-	text-decoration: none;
-}
-
-body {
-	background-color: #303841;
-/* 	user-select: none; */
-}
 .body-table-de-jeu {background-color: #006000;}
-
-button {cursor: pointer;}
-
-button,
-input {
-	color: #000099;
-}
 
 canvas {
 	border: 3px solid #213363;
@@ -27,12 +10,6 @@ canvas {
 }
 
 div {aspect-ratio: 1}
-
-iframe {
-	width: 25%;
-	aspect-ratio: 3 / 2;
-	border: 3px solid #213363;
-}
 
 .table-plateau-de-jeu {
 	background-color: #582900;
