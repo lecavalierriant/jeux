@@ -1,9 +1,0 @@
-body {font-size: 300%;}
-
-td {
-	cursor: pointer;
-	width: 75px;
-	height: 75px;
-}
-.td-blanc {background-color: #ffffff;}
-.td-noir {background-color: #000000;}
