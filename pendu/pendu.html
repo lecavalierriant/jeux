@@ -1,35 +1,26 @@
 <!doctype html>
-<html lang = fr>
+<html lang = "fr">
 <head>
 	<title>Pendu</title>
-	<meta charset = utf-8>
-	<link rel = icon href = ../jeux.ico>
+	<meta charset = "utf-8">
+	<link rel = "icon" href = "../jeux.ico">
 	<link rel = "stylesheet" href = "../../lecavalierriant/lecavalierriant.css">
-	<link rel = stylesheet href = ../jeux.css>
-	<script src = pendu.js></script>
+	<link rel = "stylesheet" href = "../jeux.css">
+	<script src = "pendu.js"></script>
 </head>
-<body onload = initialiser()>
+<body onload = "initialiser()">
 <iframe src = "../jeux.html"></iframe>
 
 <h1>Pendu</h1>
 
-<span>
-	<pre id = pre>
- +---+
- |   |
-     |
-     |
-     |
-     |
-	</pre>
-</span>
+<span id = "span"></span>
 
-<p id = mot></p>
+<p id = "mot"></p>
 
-<input type = text id = input maxlength = 1 placeholder = "Entrez une lettre">
-<button id = button>Essayer</button>
+<input type = "text" id = "input" maxlength = "1" placeholder = "Entrez une lettre">
+<button onclick = "essayer()" id = "button">Essayer</button>
 
-<p id = message></p>
+<p id = "message"></p>
 
 </body>
 </html>
