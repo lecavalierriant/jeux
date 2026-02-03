@@ -1,17 +1,9 @@
-* {
-	font-size: 25px;
-}
-
 .body-table-de-jeu {background-color: #006000;}
 
 canvas {
 	border: 3px solid #213363;
 	background-color: #d3d04f;
 }
-
-div {aspect-ratio: 1}
-
-iframe {width: 100%;}
 
 .table-plateau-de-jeu {
 	background-color: #582900;
