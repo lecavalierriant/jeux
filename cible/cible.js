@@ -6,13 +6,13 @@ droite = false;
 gauche = false;
 
 function pressée(événement) {
-	if (événement.key === "ArrowRight") {droite = true;} else
-	if (événement.key === "ArrowLeft") {gauche = true;}
+	if (événement.key === "ArrowRight") {droite = true;}
+	else if (événement.key === "ArrowLeft") {gauche = true;}
 }
 
 function relachée(événement) {
-	if (événement.key === "ArrowRight") {droite = false;} else
-	if (événement.key === "ArrowLeft") {gauche = false;}
+	if (événement.key === "ArrowRight") {droite = false;}
+	else if (événement.key === "ArrowLeft") {gauche = false;}
 }
 
 function afficherJoueur() {
