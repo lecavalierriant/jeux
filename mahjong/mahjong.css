@@ -1,4 +1,4 @@
-a:hover {margin-left: 5%;}
+a {font-style: normal;}
 .a-fleurs,
 .a-saisons,
 .a-combinaisons,
@@ -18,30 +18,17 @@ a:hover {margin-left: 5%;}
 body {
 	text-shadow: 2px 2px 1px #000000;
 	font-size: 150%;
-	font-family: bahnschrift;
 	user-select: none;
-
 }
 
 button {
 	transition: 0.2s;
 	font-size: 100%;
-	font-family: bahnschrift;
-	border: 2px #ffffff solid;
-	border-radius: 10px;
-	margin-top: 5%;
-	margin-bottom: 5%;
-	box-shadow: 2px 2px 1px #000000;
 	background-color: #0027b4;
-	text-shadow: 2px 2px 1px #000000;
-}
-button:hover {
-	background-color: #3352c3;
 	cursor: pointer;
-	margin-left: 5%;
 }
+button:hover {background-color: #3352c3;}
 button:active {background-color: #667dd2;}
-#button-sélectionner, #button-valider {font-size: 150%;}
 
 .div-pile {position: relative;}
 .div-haut {
@@ -55,17 +42,11 @@ button:active {background-color: #667dd2;}
 	right: 50%;
 }
 
-#table-plateau {width: 100%;}
 #table-exposition {font-size: 200%;}
-#table-annonces {width: 80%;}
-#table-murs {
-	background: url("rdv.png") no-repeat center #008000;
-	background-size: 50%;
-}
+#table-murs {background: url("rdv.svg") no-repeat center #007700;}
 
 /*td {border: 2px #000000 solid;}*/
 .td-main, #td-pioche-main {font-size: 275%;}
 #td-pioche-main {background-color: #0027b4;}
-.tr-encadrement td, .td-encadrement {padding: 17px;}
-
-th {font-size: 175%;}
+.tr-encadrement td,
+.td-encadrement {padding: 17px;}
