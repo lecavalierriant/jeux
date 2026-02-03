@@ -4,4 +4,4 @@
 
 Plusieurs jeux à jouer sur son navigateur.
 
-Lien : https://lecavalierriant.github.io/jeux/jeux.html
+Lien : https://lecavalierriant.github.io/jeux/jeux.html
