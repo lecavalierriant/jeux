@@ -54,19 +54,19 @@ class Tuile {
 	constructor(force, famille) {
 		this.force = force;
 		this.famille = famille;
-		if (this.famille == "vents") {this.unicode = vents[this.force - 1];} else
-		if (this.famille == "dragons") {this.unicode = dragons[this.force - 1];} else
-		if (this.famille == "caractères") {this.unicode = caractères[this.force - 1];} else
-		if (this.famille == "bambous") {this.unicode = bambous[this.force - 1];} else
-		if (this.famille == "ronds") {this.unicode = ronds[this.force - 1];} else
-		if (this.famille == "fleurs") {this.unicode = fleurs[this.force - 1];} else
-		if (this.famille == "saisons") {this.unicode = saisons[this.force - 1];}
+		if (this.famille == "vents") {this.unicode = vents[this.force - 1];}
+		else if (this.famille == "dragons") {this.unicode = dragons[this.force - 1];}
+		else if (this.famille == "caractères") {this.unicode = caractères[this.force - 1];}
+		else if (this.famille == "bambous") {this.unicode = bambous[this.force - 1];}
+		else if (this.famille == "ronds") {this.unicode = ronds[this.force - 1];}
+		else if (this.famille == "fleurs") {this.unicode = fleurs[this.force - 1];}
+		else if (this.famille == "saisons") {this.unicode = saisons[this.force - 1];}
 	}
 	nom() {
-		if (this.famille == "vents") {return "Vent " + ventsTexte[this.force - 1];} else
-		if (this.famille == "dragons") {return "Dragon " + dragonsTexte[this.force - 1];} else
-		if (this.famille == "fleurs") {return fleursTexte[this.force - 1];} else
-		if (this.famille == "saisons") {return saisonsTexte[this.force - 1];}
+		if (this.famille == "vents") {return "Vent " + ventsTexte[this.force - 1];}
+		else if (this.famille == "dragons") {return "Dragon " + dragonsTexte[this.force - 1];}
+		else if (this.famille == "fleurs") {return fleursTexte[this.force - 1];}
+		else if (this.famille == "saisons") {return saisonsTexte[this.force - 1];}
 		else {return this.force + " de " + this.famille;}
 	}
 }
