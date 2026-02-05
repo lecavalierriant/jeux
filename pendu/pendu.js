@@ -42,7 +42,7 @@ function essayer() {
 				message.textContent = "Félicitations ! Vous avez deviné le mot.";
 				input.disabled = true;
 				button.disabled = true;
-			} else {message.textContent = "Bonne devinette !";}
+			} else {message.textContent = "Bonne devinette !";}
 		} else {
 			message.textContent = "Ce n'est pas une bonne lettre. Essayez encore !";
 			essaisRestants--;
