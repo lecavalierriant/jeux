@@ -1,14 +1,16 @@
 .carte {
-	width: 10%;
-	background-color: #17594A;
+	width: 100px;
+	height: 100px;
+	background-color: #115544;
 	display: inline-block;
-	margin: 1%;
+	margin: 10px;
 	cursor: pointer;
 }
 
 .carte:hover {
-	width: 11%;
-	margin: 0.5%;
+	width: 110px;
+	height: 110px;
+	margin: 5px;
 }
 
 .carte[data-value = A].flip {background-color: #ff0000;}
