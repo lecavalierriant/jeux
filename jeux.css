@@ -1,8 +1,8 @@
 .body-table-de-jeu {background-color: #006000;}
 
 canvas {
-	border: 3px solid #213363;
-	background-color: #d3d04f;
+	border: 2px #ffffff solid;
+	margin: 5px;
 }
 
 .table-plateau-de-jeu {
