@@ -67,7 +67,7 @@ function rafraichir() {
 	requestAnimationFrame(rafraichir);
 }
 
-function initialisation() {
+function initialiser() {
 	contexte = canvas.getContext("2d");
 	joueur = {
 		x: canvas.width / 2,
