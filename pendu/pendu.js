@@ -2,22 +2,22 @@ mots = ["CHIEN", "CHAT", "MAISON", "JARDIN", "VOITURE", "SOLEIL"];
 secret = mots[Math.floor(Math.random() * mots.length)];
 longueur = secret.length;
 étapes = [
-	" ┌───┐\n │   │\n     │\n     │\n     │\n     │\n",
-	" ┌───┐\n │   │\n ☻   │\n     │\n     │\n     │\n",
-	" ┌───┐\n │   │\n ☻   │\n │   │\n     │\n     │\n",
-	" ┌───┐\n │   │\n ☻   │\n╭┤   │\n     │\n     │\n",
-	" ┌───┐\n │   │\n ☻   │\n╭┼╮  │\n     │\n     │\n",
-	" ┌───┐\n │   │\n ☻   │\n╭┼╮  │\n╱    │\n     │\n",
-	" ┌───┐\n │   │\n ☻   │\n╭┼╮  │\n╱ ╲  │\n     │\n"
+	" ┌───┐\n     │\n     │\n     │\n     │\n─────┘",
+	" ┌───┐\n ☻   │\n     │\n     │\n     │\n─────┘",
+	" ┌───┐\n ☻   │\n │   │\n ╵   │\n     │\n─────┘",
+	" ┌───┐\n ☻   │\n╭┤   │\n ╵   │\n     │\n─────┘",
+	" ┌───┐\n ☻   │\n╭┼╮  │\n ╵   │\n     │\n─────┘",
+	" ┌───┐\n ☻   │\n╭┼╮  │\n╭┘   │\n     │\n─────┘",
+	" ┌───┐\n ☻   │\n╭┼╮  │\n╭┴╮  │\n     │\n─────┘"
 ];
 essaisRestants = 6;
 trouvées = 0;
 affiché = "";
-for (var i = 0; i < longueur; i++) {affiché += "_ ";}
+for (var i = 0; i < longueur; i++) {affiché += "_ ";}
 
 function initialiser() {
 	mot.textContent = affiché.trim();
-	span.innerText = étapes[0];
+	pre.innerText = étapes[0];
 }
 
 function essayer() {
@@ -46,7 +46,8 @@ function essayer() {
 		} else {
 			message.textContent = "Ce n'est pas une bonne lettre. Essayez encore !";
 			essaisRestants--;
-			span.innerText = étapes[6 - essaisRestants];
+			pre.innerText = étapes[6 - essaisRestants];
+			mauvais.innerText += " " + tentative;
 			if (essaisRestants === 0) {
 				message.textContent = "Dommage, vous avez perdu. Le mot était : " + secret;
 				input.disabled = true;
