@@ -13,11 +13,11 @@
 	margin: 5px;
 }
 
-.carte[data-value = A].flip {background-color: #ff0000;}
-.carte[data-value = B].flip {background-color: #00ff00;}
-.carte[data-value = C].flip {background-color: #0000ff;}
-.carte[data-value = D].flip {background-color: #ffff00;}
-.carte[data-value = E].flip {background-color: #ff00ff;}
-.carte[data-value = F].flip {background-color: #00ffff;}
-.carte[data-value = G].flip {background-color: #ff8000;}
-.carte[data-value = H].flip {background-color: #008000;}
+.carte[data-value = A].retournée {background-color: #ff0000;}
+.carte[data-value = B].retournée {background-color: #00ff00;}
+.carte[data-value = C].retournée {background-color: #0000ff;}
+.carte[data-value = D].retournée {background-color: #ffff00;}
+.carte[data-value = E].retournée {background-color: #ff00ff;}
+.carte[data-value = F].retournée {background-color: #00ffff;}
+.carte[data-value = G].retournée {background-color: #ff8000;}
+.carte[data-value = H].retournée {background-color: #008000;}
