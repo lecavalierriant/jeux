@@ -22,13 +22,13 @@ function initialiser() {
 
 function essayer() {
 	tentative = input.value.toUpperCase();
-	if (tentative.length !== 1 || !tentative.match(/[a-z]/i)) {
+	if (tentative.length != 1 || !tentative.match(/[a-z]/i)) {
 		message.textContent = "Veuillez entrer une lettre de l'alphabet.";
 	} else {
 		nouveauAffiché = "";
 		trouvée = false;
 		for (var i = 0; i < longueur; i++) {
-			if (secret[i] === tentative) {
+			if (secret[i] == tentative) {
 				nouveauAffiché += tentative + " ";
 				trouvée = true;
 				trouvées++;
@@ -38,7 +38,7 @@ function essayer() {
 		input.value = "";
 		input.focus();
 		if (trouvée) {
-			if (trouvées === longueur) {
+			if (trouvées == longueur) {
 				message.textContent = "Félicitations ! Vous avez deviné le mot.";
 				input.disabled = true;
 				button.disabled = true;
@@ -48,7 +48,7 @@ function essayer() {
 			essaisRestants--;
 			pre.innerText = étapes[6 - essaisRestants];
 			mauvais.innerText += " " + tentative;
-			if (essaisRestants === 0) {
+			if (essaisRestants == 0) {
 				message.textContent = "Dommage, vous avez perdu. Le mot était : " + secret;
 				input.disabled = true;
 				button.disabled = true;
