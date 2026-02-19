@@ -176,115 +176,115 @@ function nouveauPaquet() {
 
 function distribuer(argument) {
 	for (var i = 13 - 1; i >= 0; i--) {
-		document.getElementsByClassName("td-main")[i].innerHTML = "<a ondblclick = cracher(this) class = a-main>" + paquet[i].unicode + "</a>";
-		document.getElementsByClassName("td-main")[i].title = paquet[i].nom();
+		document.querySelectorAll(".td-main")[i].innerHTML = "<a ondblclick = cracher(this) class = a-main>" + paquet[i].unicode + "</a>";
+		document.querySelectorAll(".td-main")[i].title = paquet[i].nom();
 	}
 	for (var i = 13 * 4 - 1; i >= 0; i--) {piocherMur(false);}
 }
 
 function cracher(tuile) {
-	tuilesMain = document.getElementsByClassName("a-main");
+	tuilesMain = document.querySelectorAll(".a-main");
 	index = Array.prototype.indexOf.call(tuilesMain, tuile);
 	tuileCracher = paquet[index];
 	tuileCracherForce = tuileCracher.force - 1;
 	if (tuileCracher.famille == "fleurs") {
-		document.getElementsByClassName("a-fleurs")[tuileCracherForce].innerHTML = tuileCracher.unicode;
-		document.getElementsByClassName("a-fleurs")[tuileCracherForce].title = tuileCracher.nom();
+		document.querySelectorAll(".a-fleurs")[tuileCracherForce].innerHTML = tuileCracher.unicode;
+		document.querySelectorAll(".a-fleurs")[tuileCracherForce].title = tuileCracher.nom();
 		remplacer();
 	} else if (tuileCracher.famille == "saisons") {
-		document.getElementsByClassName("a-saisons")[tuileCracherForce].innerHTML = tuileCracher.unicode;
-		document.getElementsByClassName("a-saisons")[tuileCracherForce].title = tuileCracher.nom();
+		document.querySelectorAll(".a-saisons")[tuileCracherForce].innerHTML = tuileCracher.unicode;
+		document.querySelectorAll(".a-saisons")[tuileCracherForce].title = tuileCracher.nom();
 		remplacer();
 	} else {
 		paquetCentre.push(tuileCracher);
-		document.getElementsByClassName("td-centre")[compteCracher].innerHTML = "<a ondblclick = piocherCentre(this) class = a-centre id = a-crachee>" + tuileCracher.unicode + "</a>";
-		document.getElementsByClassName("a-centre")[compteCracher].title = tuileCracher.nom();
+		document.querySelectorAll(".td-centre")[compteCracher].innerHTML = "<a ondblclick = piocherCentre(this) class = a-centre id = a-crachee>" + tuileCracher.unicode + "</a>";
+		document.querySelectorAll(".a-centre")[compteCracher].title = tuileCracher.nom();
 		compteCracher++;
 	}
-	document.getElementsByClassName("a-main")[index].innerHTML = "";
+	document.querySelectorAll(".a-main")[index].innerHTML = "";
 }
 
 function piocherCentre(tuile) {
-	tuilesCentre = document.getElementsByClassName("a-centre");
+	tuilesCentre = document.querySelectorAll(".a-centre");
 	index = Array.prototype.indexOf.call(tuilesCentre, tuile);
 	tuilePiocherCentre = paquetCentre[index];
 	document.getElementById("td-pioche-main").innerHTML = "<a id = a-pioche-main>" + tuilePiocherCentre.unicode + "</a>";
 	document.getElementById("a-pioche-main").title = tuilePiocherCentre.nom();
-	document.getElementsByClassName("td-centre")[index].innerHTML = "<a class = a-centre></a>";
+	document.querySelectorAll(".td-centre")[index].innerHTML = "<a class = a-centre></a>";
 }
 
 function piocherMur(afficherPioche) {
 	tuilePiocherMur = paquet[144 - 1 - comptePiocherMur];
 	if (comptePiocherMur < 12) {
 		if (comptePiocherMur == 10) {
-			document.getElementsByClassName("td-mur")[Math.floor(compte1PiocherMur / 2)].innerHTML =
+			document.querySelectorAll(".td-mur")[Math.floor(compte1PiocherMur / 2)].innerHTML =
 				"<a ondblclick = piocherMur() class = a-mur id = a-bas-gauche>🀫</a>";
 		} else if (comptePiocherMur % 2 == 0) {
-			document.getElementsByClassName("td-mur")[Math.floor(compte1PiocherMur / 2)].innerHTML =
+			document.querySelectorAll(".td-mur")[Math.floor(compte1PiocherMur / 2)].innerHTML =
 				"<a ondblclick = piocherMur() class = a-mur>🀫</a>";
 		} else {
-			document.getElementsByClassName("td-mur")[Math.floor(compte1PiocherMur / 2)].innerHTML = "";
+			document.querySelectorAll(".td-mur")[Math.floor(compte1PiocherMur / 2)].innerHTML = "";
 		}
 		compte1PiocherMur--;
 	} else if (comptePiocherMur < 46) {
 		if (bascule2PiocherMur) {
 			if (compte2PiocherMur % 2 == 1) {
-				document.getElementsByClassName("td-mur")[Math.floor(compte2PiocherMur / 2) - 2].innerHTML =
+				document.querySelectorAll(".td-mur")[Math.floor(compte2PiocherMur / 2) - 2].innerHTML =
 					"<a ondblclick = piocherMur() class = a-mur>🀫</a>";
 			} else {
-				document.getElementsByClassName("td-mur")[Math.floor(compte2PiocherMur / 2) - 2].innerHTML = "";
+				document.querySelectorAll(".td-mur")[Math.floor(compte2PiocherMur / 2) - 2].innerHTML = "";
 				compte2PiocherMur--;
 				compte2PiocherMur--;
 				bascule2PiocherMur = true;
 			}
 		} else {
 			if (compte2PiocherMur % 2 == 1) {
-				document.getElementsByClassName("td-mur")[Math.floor(compte2PiocherMur / 2)].innerHTML =
+				document.querySelectorAll(".td-mur")[Math.floor(compte2PiocherMur / 2)].innerHTML =
 					"<a ondblclick = piocherMur() class = a-mur>🀫</a>";
 			} else {
-				document.getElementsByClassName("td-mur")[Math.floor(compte2PiocherMur / 2)].innerHTML = "";
+				document.querySelectorAll(".td-mur")[Math.floor(compte2PiocherMur / 2)].innerHTML = "";
 				bascule2PiocherMur = true;
 			}
 		}
 		compte2PiocherMur--;
 	} else if (comptePiocherMur < 84) {
 		if (comptePiocherMur == 82) {
-			document.getElementsByClassName("td-mur")[Math.floor(compte3PiocherMur / 2)].innerHTML =
+			document.querySelectorAll(".td-mur")[Math.floor(compte3PiocherMur / 2)].innerHTML =
 				"<a ondblclick = piocherMur() class = a-mur id = a-haut-droite>🀫</a>";
 		} else if (comptePiocherMur % 2 == 0) {
-			document.getElementsByClassName("td-mur")[Math.floor(compte3PiocherMur / 2)].innerHTML =
+			document.querySelectorAll(".td-mur")[Math.floor(compte3PiocherMur / 2)].innerHTML =
 				"<a ondblclick = piocherMur() class = a-mur>🀫</a>";
 		} else {
-			document.getElementsByClassName("td-mur")[Math.floor(compte3PiocherMur / 2)].innerHTML = "";
+			document.querySelectorAll(".td-mur")[Math.floor(compte3PiocherMur / 2)].innerHTML = "";
 		}
 		compte3PiocherMur++;
 	} else if (comptePiocherMur < 118) {
 		if (bascule4PiocherMur) {
 			if (compte4PiocherMur % 2 == 0) {
-				document.getElementsByClassName("td-mur")[Math.floor(compte4PiocherMur / 2) + 2].innerHTML =
+				document.querySelectorAll(".td-mur")[Math.floor(compte4PiocherMur / 2) + 2].innerHTML =
 					"<a ondblclick = piocherMur() class = a-mur>🀫</a>";
 			} else {
-				document.getElementsByClassName("td-mur")[Math.floor(compte4PiocherMur / 2) + 2].innerHTML = "";
+				document.querySelectorAll(".td-mur")[Math.floor(compte4PiocherMur / 2) + 2].innerHTML = "";
 				compte4PiocherMur++;
 				compte4PiocherMur++;
 				bascule4PiocherMur = true;
 			}
 		} else {
 			if (compte4PiocherMur % 2 == 1) {
-				document.getElementsByClassName("td-mur")[Math.floor(compte4PiocherMur / 2)].innerHTML =
+				document.querySelectorAll(".td-mur")[Math.floor(compte4PiocherMur / 2)].innerHTML =
 					"<a ondblclick = piocherMur() class = a-mur>🀫</a>";
 			} else {
-				document.getElementsByClassName("td-mur")[Math.floor(compte4PiocherMur / 2)].innerHTML = "";
+				document.querySelectorAll(".td-mur")[Math.floor(compte4PiocherMur / 2)].innerHTML = "";
 				bascule4PiocherMur = true;
 			}
 		}
 		compte4PiocherMur++;
 	} else {
 		if (comptePiocherMur % 2 == 0) {
-			document.getElementsByClassName("td-mur")[Math.floor(compte5PiocherMur / 2)].innerHTML =
+			document.querySelectorAll(".td-mur")[Math.floor(compte5PiocherMur / 2)].innerHTML =
 				"<a ondblclick = piocherMur() class = a-mur>🀫</a>";
 		} else {
-			document.getElementsByClassName("td-mur")[Math.floor(compte5PiocherMur / 2)].innerHTML = "";
+			document.querySelectorAll(".td-mur")[Math.floor(compte5PiocherMur / 2)].innerHTML = "";
 		}
 		compte5PiocherMur--;
 	}
@@ -299,12 +299,12 @@ function joueurSuivant() {
 	// enregistrer les changements
 	// passer la main
 	// verrouillage de la tuile crachée au tour précédent
-	tuileCrachee = document.getElementsByClassName("a-centre")[document.getElementsByClassName("a-centre").length].innerHTML;
+	tuileCrachee = document.querySelectorAll(".a-centre")[document.querySelectorAll(".a-centre").length].innerHTML;
 }
 
 function remplacer() {
 	tuileRemplacer = paquet[144 - 1 - compteRemplacer];
-	document.getElementsByClassName("div-très-haut")[compteRemplacer].innerHTML = "";
+	document.querySelectorAll(".div-très-haut")[compteRemplacer].innerHTML = "";
 	document.getElementById("td-pioche-main").innerHTML = "<a id = a-pioche-main>" + tuileRemplacer.unicode + "</a>";
 	document.getElementById("a-pioche-main").title = tuileRemplacer.nom();
 	compteRemplacer--;
@@ -361,7 +361,7 @@ function estPaire(tuile1, tuile2) {
 }
 
 function valider() {
-	tuilesSelectionnees = document.getElementsByClassName("a-sélectionnées");
+	tuilesSelectionnees = document.querySelectorAll(".a-sélectionnées");
 	if (tuilesSelectionnees.length == 0) {alert("Veuillez sélectionner des tuiles.");}
 	else {
 		tuiles = [];
@@ -410,22 +410,22 @@ function valider() {
 
 function verouillageBoutons() {
 	if (basculeVerouillageBoutons) {
-		if (annonce != "Chow") {document.getElementsByClassName("button-annonces")[0].style.opacity = 0.5;}
-		if (annonce != "Pung") {document.getElementsByClassName("button-annonces")[1].style.opacity = 0.5;}
-		if (annonce != "Pung interne") {document.getElementsByClassName("button-annonces")[2].style.opacity = 0.5;}
-		if (annonce != "Kong") {document.getElementsByClassName("button-annonces")[3].style.opacity = 0.5;}
-		if (annonce != "Kong interne") {document.getElementsByClassName("button-annonces")[4].style.opacity = 0.5;}
-		if (annonce != "Mahjong") {document.getElementsByClassName("button-annonces")[5].style.opacity = 0.5;}
-		if (annonce != "Paire") {document.getElementsByClassName("button-annonces")[6].style.opacity = 0.5;}
+		if (annonce != "Chow") {document.querySelectorAll(".button-annonces")[0].style.opacity = 0.5;}
+		if (annonce != "Pung") {document.querySelectorAll(".button-annonces")[1].style.opacity = 0.5;}
+		if (annonce != "Pung interne") {document.querySelectorAll(".button-annonces")[2].style.opacity = 0.5;}
+		if (annonce != "Kong") {document.querySelectorAll(".button-annonces")[3].style.opacity = 0.5;}
+		if (annonce != "Kong interne") {document.querySelectorAll(".button-annonces")[4].style.opacity = 0.5;}
+		if (annonce != "Mahjong") {document.querySelectorAll(".button-annonces")[5].style.opacity = 0.5;}
+		if (annonce != "Paire") {document.querySelectorAll(".button-annonces")[6].style.opacity = 0.5;}
 		basculeVerouillageBoutons = false;
 	} else {
-		if (annonce != "Chow") {document.getElementsByClassName("button-annonces")[0].style.opacity = 1;}
-		if (annonce != "Pung") {document.getElementsByClassName("button-annonces")[1].style.opacity = 1;}
-		if (annonce != "Pung interne") {document.getElementsByClassName("button-annonces")[2].style.opacity = 1;}
-		if (annonce != "Kong") {document.getElementsByClassName("button-annonces")[3].style.opacity = 1;}
-		if (annonce != "Kong interne") {document.getElementsByClassName("button-annonces")[4].style.opacity = 1;}
-		if (annonce != "Mahjong") {document.getElementsByClassName("button-annonces")[5].style.opacity = 1;}
-		if (annonce != "Paire") {document.getElementsByClassName("button-annonces")[6].style.opacity = 1;}
+		if (annonce != "Chow") {document.querySelectorAll(".button-annonces")[0].style.opacity = 1;}
+		if (annonce != "Pung") {document.querySelectorAll(".button-annonces")[1].style.opacity = 1;}
+		if (annonce != "Pung interne") {document.querySelectorAll(".button-annonces")[2].style.opacity = 1;}
+		if (annonce != "Kong") {document.querySelectorAll(".button-annonces")[3].style.opacity = 1;}
+		if (annonce != "Kong interne") {document.querySelectorAll(".button-annonces")[4].style.opacity = 1;}
+		if (annonce != "Mahjong") {document.querySelectorAll(".button-annonces")[5].style.opacity = 1;}
+		if (annonce != "Paire") {document.querySelectorAll(".button-annonces")[6].style.opacity = 1;}
 		basculeVerouillageBoutons = true;
 	}
 }
@@ -438,7 +438,7 @@ function sélectionner() {
 		document.getElementById("button-sélectionner").style.opacity = 1;
 		basculesélectionner = true;
 	}
-	tuilesMain = document.getElementsByClassName("a-main");
+	tuilesMain = document.querySelectorAll(".a-main");
 	piocheMain = document.getElementById("a-pioche-main");
 	dernierCrache = document.getElementById("a-crachee");
 	tuilesArray = Array.from(tuilesMain);
