@@ -1,40 +1,13 @@
-vents = ["🀃", "🀁", "🀀", "🀂"];
-ventsTexte = ["du Nord", "du Sud", "d'Est", "d'Ouest"];
-// vents = {
-// 	"🀃": "du Nord",
-// 	"🀁": "du Sud",
-// 	"🀀": "d'Est",
-// 	"🀂": "d'Ouest"
-// }
-dragons = ["🀄", "🀅", "🀆"];
-dragonsTexte = ["rouge", "vert", "blanc"];
-// dragons = {
-// 	"🀄": "rouge",
-// 	"🀅": "vert",
-// 	"🀆": "blanc"
-// }
+vents = [["🀃", "du Nord"], ["🀁", "du Sud"], ["🀀", "d'Est"], ["🀂", "d'Ouest"]];
+dragons = [["🀄", "rouge"], ["🀅", "vert"], ["🀆", "blanc"]];
 caractères = ["🀇", "🀈", "🀉", "🀊", "🀋", "🀌", "🀍", "🀎", "🀏"];
 bambous = ["🀐", "🀑", "🀒", "🀓", "🀔", "🀕", "🀖", "🀗", "🀘"];
 ronds = ["🀙", "🀚", "🀛", "🀜", "🀝", "🀞", "🀟", "🀠", "🀡"];
-fleurs = ["🀢", "🀣", "🀤", "🀥"];
-fleursTexte = ["Fleur de prunier", "Orchidée", "Fleur de bambou", "Chrysanthème"];
-// fleurs = {
-// 	"🀢": "Fleur de prunier",
-// 	"🀣": "Orchidée",
-// 	"🀤": "Fleur de bambou",
-// 	"🀥": "Chrysanthème"
-// }
-saisons = ["🀦", "🀧", "🀨", "🀩"];
-saisonsTexte = ["Printemps", "Été", "Automne", "Hiver"];
-// saisons = {
-// 	"🀦": "Printemps",
-// 	"🀧": "Été",
-// 	"🀨": "Automne",
-// 	"🀩": "Hiver"
-// }
+fleurs = [["🀢", "Fleur de prunier"], ["🀣", "Orchidée"], ["🀤", "Fleur de bambou"], ["🀥", "Chrysanthème"]];
+saisons = [["🀦", "Printemps"], ["🀧", "Été"], ["🀨", "Automne"], ["🀩", "Hiver"]];
 paquet = [];
-paquetCentre = [];
-compteCracher = 0;
+défausse = [];
+compteDéfausse = 0;
 comptePiocherMur = 0;
 compte1PiocherMur = 144 - 26 - 1;
 compte2PiocherMur = 144 - 36 - 1;
@@ -44,9 +17,8 @@ compte5PiocherMur = 144 - 8 - 1;
 compteRemplacer = 8 - 1;
 bascule2PiocherMur = true;
 bascule4PiocherMur = true;
-basculeVerouillageBoutons = true;
-basculesélectionner = true;
-basculeValider = true;
+boutonsVerrouilés = true;
+séléction = true;
 annonce = "";
 combinaisons = 0;
 
@@ -54,19 +26,19 @@ class Tuile {
 	constructor(force, famille) {
 		this.force = force;
 		this.famille = famille;
-		if (this.famille == "vents") {this.unicode = vents[this.force - 1];}
-		else if (this.famille == "dragons") {this.unicode = dragons[this.force - 1];}
+		if (this.famille == "vents") {this.unicode = vents[this.force - 1][0];}
+		else if (this.famille == "dragons") {this.unicode = dragons[this.force - 1][0];}
 		else if (this.famille == "caractères") {this.unicode = caractères[this.force - 1];}
 		else if (this.famille == "bambous") {this.unicode = bambous[this.force - 1];}
 		else if (this.famille == "ronds") {this.unicode = ronds[this.force - 1];}
-		else if (this.famille == "fleurs") {this.unicode = fleurs[this.force - 1];}
-		else if (this.famille == "saisons") {this.unicode = saisons[this.force - 1];}
+		else if (this.famille == "fleurs") {this.unicode = fleurs[this.force - 1][0];}
+		else if (this.famille == "saisons") {this.unicode = saisons[this.force - 1][0];}
 	}
 	nom() {
-		if (this.famille == "vents") {return "Vent " + ventsTexte[this.force - 1];}
-		else if (this.famille == "dragons") {return "Dragon " + dragonsTexte[this.force - 1];}
-		else if (this.famille == "fleurs") {return fleursTexte[this.force - 1];}
-		else if (this.famille == "saisons") {return saisonsTexte[this.force - 1];}
+		if (this.famille == "vents") {return "Vent " + vents[this.force - 1][1];}
+		else if (this.famille == "dragons") {return "Dragon " + dragons[this.force - 1][1];}
+		else if (this.famille == "fleurs") {return fleurs[this.force - 1][1];}
+		else if (this.famille == "saisons") {return saisons[this.force - 1][1];}
 		else {return this.force + " de " + this.famille;}
 	}
 }
@@ -196,10 +168,10 @@ function cracher(tuile) {
 		document.querySelectorAll(".a-saisons")[tuileCracherForce].title = tuileCracher.nom();
 		remplacer();
 	} else {
-		paquetCentre.push(tuileCracher);
-		document.querySelectorAll(".td-centre")[compteCracher].innerHTML = "<a ondblclick = piocherCentre(this) class = a-centre id = a-crachee>" + tuileCracher.unicode + "</a>";
-		document.querySelectorAll(".a-centre")[compteCracher].title = tuileCracher.nom();
-		compteCracher++;
+		défausse.push(tuileCracher);
+		document.querySelectorAll(".td-centre")[compteDéfausse].innerHTML = "<a ondblclick = piocherCentre(this) class = a-centre id = a-crachee>" + tuileCracher.unicode + "</a>";
+		document.querySelectorAll(".a-centre")[compteDéfausse].title = tuileCracher.nom();
+		compteDéfausse++;
 	}
 	document.querySelectorAll(".a-main")[index].innerHTML = "";
 }
@@ -207,7 +179,7 @@ function cracher(tuile) {
 function piocherCentre(tuile) {
 	tuilesCentre = document.querySelectorAll(".a-centre");
 	index = Array.prototype.indexOf.call(tuilesCentre, tuile);
-	tuilePiocherCentre = paquetCentre[index];
+	tuilePiocherCentre = défausse[index];
 	document.getElementById("td-pioche-main").innerHTML = "<a id = a-pioche-main>" + tuilePiocherCentre.unicode + "</a>";
 	document.getElementById("a-pioche-main").title = tuilePiocherCentre.nom();
 	document.querySelectorAll(".td-centre")[index].innerHTML = "<a class = a-centre></a>";
@@ -409,7 +381,7 @@ function valider() {
 }
 
 function verouillageBoutons() {
-	if (basculeVerouillageBoutons) {
+	if (boutonsVerrouilés) {
 		if (annonce != "Chow") {document.querySelectorAll(".button-annonces")[0].style.opacity = 0.5;}
 		if (annonce != "Pung") {document.querySelectorAll(".button-annonces")[1].style.opacity = 0.5;}
 		if (annonce != "Pung interne") {document.querySelectorAll(".button-annonces")[2].style.opacity = 0.5;}
@@ -417,7 +389,7 @@ function verouillageBoutons() {
 		if (annonce != "Kong interne") {document.querySelectorAll(".button-annonces")[4].style.opacity = 0.5;}
 		if (annonce != "Mahjong") {document.querySelectorAll(".button-annonces")[5].style.opacity = 0.5;}
 		if (annonce != "Paire") {document.querySelectorAll(".button-annonces")[6].style.opacity = 0.5;}
-		basculeVerouillageBoutons = false;
+		boutonsVerrouilés = false;
 	} else {
 		if (annonce != "Chow") {document.querySelectorAll(".button-annonces")[0].style.opacity = 1;}
 		if (annonce != "Pung") {document.querySelectorAll(".button-annonces")[1].style.opacity = 1;}
@@ -426,17 +398,17 @@ function verouillageBoutons() {
 		if (annonce != "Kong interne") {document.querySelectorAll(".button-annonces")[4].style.opacity = 1;}
 		if (annonce != "Mahjong") {document.querySelectorAll(".button-annonces")[5].style.opacity = 1;}
 		if (annonce != "Paire") {document.querySelectorAll(".button-annonces")[6].style.opacity = 1;}
-		basculeVerouillageBoutons = true;
+		boutonsVerrouilés = true;
 	}
 }
 
 function sélectionner() {
-	if (basculesélectionner) {
+	if (séléction) {
 		document.getElementById("button-sélectionner").style.opacity = 0.5;
-		basculesélectionner = false;
+		séléction = false;
 	} else {
 		document.getElementById("button-sélectionner").style.opacity = 1;
-		basculesélectionner = true;
+		séléction = true;
 	}
 	tuilesMain = document.querySelectorAll(".a-main");
 	piocheMain = document.getElementById("a-pioche-main");
