@@ -45,7 +45,6 @@ button:active {background-color: #667dd2;}
 #table-exposition {font-size: 200%;}
 #table-murs {background: url("rdv.svg") no-repeat center #007700;}
 
-/*td {border: 2px #000000 solid;}*/
 .td-main, #td-pioche-main {font-size: 275%;}
 #td-pioche-main {background-color: #0027b4;}
 .tr-encadrement td,
