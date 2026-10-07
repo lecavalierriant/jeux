@@ -48,7 +48,7 @@ function collisions() {
 
 function afficherPoints() {
 	contexte.font = "100% garamond";
-	contexte.fillStyle = "#ffffff";
+	contexte.fillStyle = "#fff";
 	contexte.fillText("Points : " + points, 10, 20);
 }
 
