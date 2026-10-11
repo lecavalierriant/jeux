@@ -45,49 +45,49 @@ class Tuile {
 
 class TuileUnicode {
 	constructor(unicode) {
-		for (var i = vents.length - 1; i >= 0; i--) {
+		for (i = vents.length - 1; i >= 0; i--) {
 			if (unicode == vents[i]) {
 				this.famille = "vents";
 				this.force = i;
 				return;
 			}
 		}
-		for (var i = dragons.length - 1; i >= 0; i--) {
+		for (i = dragons.length - 1; i >= 0; i--) {
 			if (unicode == dragons[i]) {
 				this.famille = "dragons";
 				this.force = i;
 				return;
 			}
 		}
-		for (var i = caractères.length - 1; i >= 0; i--) {
+		for (i = caractères.length - 1; i >= 0; i--) {
 			if (unicode == caractères[i]) {
 				this.famille = "caractères";
 				this.force = i;
 				return;
 			}
 		}
-		for (var i = bambous.length - 1; i >= 0; i--) {
+		for (i = bambous.length - 1; i >= 0; i--) {
 			if (unicode == bambous[i]) {
 				this.famille = "bambous";
 				this.force = i;
 				return;
 			}
 		}
-		for (var i = ronds.length - 1; i >= 0; i--) {
+		for (i = ronds.length - 1; i >= 0; i--) {
 			if (unicode == ronds[i]) {
 				this.famille = "ronds";
 				this.force = i;
 				return;
 			}
 		}
-		for (var i = fleurs.length - 1; i >= 0; i--) {
+		for (i = fleurs.length - 1; i >= 0; i--) {
 			if (unicode == fleurs[i]) {
 				this.famille = "fleurs";
 				this.force = i;
 				return;
 			}
 		}
-		for (var i = saisons.length - 1; i >= 0; i--) {
+		for (i = saisons.length - 1; i >= 0; i--) {
 			if (unicode == saisons[i]) {
 				this.famille = "saisons";
 				this.force = i;
@@ -108,38 +108,38 @@ function initialiser() {
 
 function nouveauPaquet() {
 	paquetOrdre = [];
-	for (var i = 4; i >= 1; i--) {
+	for (i = 4; i >= 1; i--) {
 		tuile = new Tuile(i, "fleurs");
 		paquetOrdre.push(tuile);
 	}
-	for (var i = 4; i >= 1; i--) {
+	for (i = 4; i >= 1; i--) {
 		tuile = new Tuile(i, "saisons");
 		paquetOrdre.push(tuile);
 	}
-	for (var j = 4; j >= 1; j--) {
-		for (var i = 4; i >= 1; i--) {
+	for (j = 4; j >= 1; j--) {
+		for (i = 4; i >= 1; i--) {
 			tuile = new Tuile(i, "vents");
 			paquetOrdre.push(tuile);
 		}
-		for (var i = 3; i >= 1; i--) {
+		for (i = 3; i >= 1; i--) {
 			tuile = new Tuile(i, "dragons");
 			paquetOrdre.push(tuile);
 		}
-		for (var i = 9; i >= 1; i--) {
+		for (i = 9; i >= 1; i--) {
 			tuile = new Tuile(i, "caractères");
 			paquetOrdre.push(tuile);
 		}
-		for (var i = 9; i >= 1; i--) {
+		for (i = 9; i >= 1; i--) {
 			tuile = new Tuile(i, "bambous");
 			paquetOrdre.push(tuile);
 		}
-		for (var i = 9; i >= 1; i--) {
+		for (i = 9; i >= 1; i--) {
 			tuile = new Tuile(i, "ronds");
 			paquetOrdre.push(tuile);
 		}
 	}
 	paquet = [];
-	for (var i = paquetOrdre.length - 1; i >= 0; i--) {
+	for (i = paquetOrdre.length - 1; i >= 0; i--) {
 		index = Math.floor(Math.random() * (paquetOrdre.length - 1));
 		paquet.push(paquetOrdre[index]);
 		paquetOrdre.splice(index, 1);
@@ -147,11 +147,11 @@ function nouveauPaquet() {
 }
 
 function distribuer(argument) {
-	for (var i = 13 - 1; i >= 0; i--) {
+	for (i = 13 - 1; i >= 0; i--) {
 		document.querySelectorAll(".td-main")[i].innerHTML = "<a ondblclick = cracher(this) class = a-main>" + paquet[i].unicode + "</a>";
 		document.querySelectorAll(".td-main")[i].title = paquet[i].nom();
 	}
-	for (var i = 13 * 4 - 1; i >= 0; i--) {piocherMur(false);}
+	for (i = 13 * 4 - 1; i >= 0; i--) {piocherMur(false);}
 }
 
 function cracher(tuile) {
@@ -337,7 +337,7 @@ function valider() {
 	if (tuilesSelectionnees.length == 0) {alert("Veuillez sélectionner des tuiles.");}
 	else {
 		tuiles = [];
-		for (var i = tuilesSelectionnees.length - 1; i >= 0; i--) {
+		for (i = tuilesSelectionnees.length - 1; i >= 0; i--) {
 			tuileUnicode = new TuileUnicode(tuilesSelectionnees[i].innerText);
 			tuiles.push(tuileUnicode.tuile());
 		}
