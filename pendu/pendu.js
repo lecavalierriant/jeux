@@ -13,7 +13,7 @@ longueur = secret.length;
 essaisRestants = 6;
 trouvées = 0;
 affiché = "";
-for (var i = 0; i < longueur; i++) {affiché += "_ ";}
+for (i = 0; i < longueur; i++) {affiché += "_ ";}
 
 function initialiser() {
 	mot.textContent = affiché.trim();
@@ -27,7 +27,7 @@ function essayer() {
 	} else {
 		nouveauAffiché = "";
 		trouvée = false;
-		for (var i = 0; i < longueur; i++) {
+		for (i = 0; i < longueur; i++) {
 			if (secret[i] == tentative) {
 				nouveauAffiché += tentative + " ";
 				trouvée = true;
