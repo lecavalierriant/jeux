@@ -74,14 +74,14 @@ function initialiser() {
 		y: canvas.height - 30,
 		width: 20,
 		height: 20,
-		color: "#009900"
+		color: "#090"
 	};
 	cible = {
 		x: canvas.width / 2,
 		y: 0,
 		width: 30,
 		height: 30,
-		color: "#990000",
+		color: "#900",
 		speed: 2
 	};
 	rafraichir();
